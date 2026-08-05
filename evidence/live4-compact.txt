@@ -1,0 +1,4 @@
+{"status":"ok","model":"gpt-5.6-luna","tier":"service_tier=fast"}
+{"status":"ok","model":"gpt-5.6-luna","tier":"service_tier=fast"}
+{"status":"ok","model":"gpt-5.6-luna","tier":"service_tier=fast"}
+{"status":"ok","model":"gpt-5.6-luna","tier":"service_tier=fast"}
