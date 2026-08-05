@@ -1,0 +1,2 @@
+ok=8/8 models=['gpt-5.6-luna']
+GATE_OK

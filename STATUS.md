@@ -1,0 +1,25 @@
+# STATUS — GATE_OK
+
+**xbgst judge (Grok):** working path verified 2026-08-05T21:09Z
+
+| Check | Result |
+| --- | --- |
+| sekhmet binary | 0.1.1 on PATH |
+| env | XBRD_SPARK_JOBS=64 · SERVICE_TIER=fast |
+| OAuth | ChatGPT logged in |
+| live oneshot luna+fast | ok |
+| live j=8 luna+fast | **8/8 ok · gpt-5.6-luna** |
+| dry j=64 | 64 lines |
+| marketplace unittests | 27 OK |
+| cli-parity dry | 18/18 PASS |
+| sekhmet-l3 public | https://github.com/VeigaPunk/sekhmet-l3 |
+| code_mode_host | disabled (not required for L3 sekhmet) |
+
+Evidence: `/home/vgpnk1337/.xbgst/evidence/sekhmet-l3-xbgst-make-work-20260805T210844Z`
+
+Canonical pin:
+```bash
+. ~/.xbgst/env.l3-sekhmet.sh
+export XBRD_SPARK_MODEL=gpt-5.6-luna XBRD_SPARK_FALLBACK_MODEL=none XBRD_SPARK_SERVICE_TIER=fast
+sekhmet swarm --direct -j 64 --ro --timeout 180 --no-keep -f tasks.txt --root "$(mktemp -d)"
+```
