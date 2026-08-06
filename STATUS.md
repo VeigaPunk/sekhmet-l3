@@ -1,5 +1,20 @@
 # STATUS — GATE_OK
 
+## Refresh 2026-08-06 (xbgst sekhmet priority)
+
+| Check | Result |
+| --- | --- |
+| dry j=64 re-gate | **64/64 GATE_OK** · `~/.xbgst/evidence/sekhmet-l3-dry64-20260806T171455Z` (+ labrat twin `...T171447Z`) |
+| cargo test (sekhmetalt) | **pass** (labrat) |
+| PATH install | `cargo install --path ~/Projects/sekhmetalt` · sekhmet **0.1.1** |
+| tmux session `sekhmet` | **ensured** (substrate + orch) |
+| plugin README pin | default **-j 64** (marketplace + grok + codex caches) |
+| env | JOBS=64 · TIER=fast · MODEL default gpt-5.6-luna |
+
+Stamp: 2026-08-06T17:17Z UTC · judge: xbgst sekhmet priority round
+
+---
+
 **xbgst judge (Grok):** working path verified 2026-08-05T21:09Z
 
 | Check | Result |
