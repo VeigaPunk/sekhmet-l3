@@ -38,3 +38,16 @@ Canonical pin:
 export XBRD_SPARK_MODEL=gpt-5.6-luna XBRD_SPARK_FALLBACK_MODEL=none XBRD_SPARK_SERVICE_TIER=fast
 sekhmet swarm --direct -j 64 --ro --timeout 180 --no-keep -f tasks.txt --root "$(mktemp -d)"
 ```
+
+## Live j=64 xbgst GATE (2026-08-06)
+
+| Check | Result |
+| --- | --- |
+| live oneshot | ok |
+| live j=8 luna+fast | **8/8 ok · gpt-5.6-luna** |
+| live j=64 luna+fast | **64/64 ok · gpt-5.6-luna** |
+| evidence | `~/.xbgst/evidence/sekhmet-l3-live-xbgst-j64-20260806T172514Z` |
+| crate default model | **gpt-5.6-luna** (xbgst pin) |
+| crate default jobs | **64** |
+| env always-on | JOBS=64 · TIER=fast · MODEL=gpt-5.6-luna · FALLBACK=none |
+
