@@ -47,7 +47,9 @@ sekhmet run --direct --ro --timeout 90 --no-keep \
   --task 'Reply with exactly: SEKHMET_LUNA_FAST_OK' --root "$ROOT"
 ```
 
-## Proven live oneshot (this ship)
+## Proven live oneshot (prior host, 2026-08-05)
+
+Historical (vgpnk1337). plazir27 2026-08-20: PATH + dry j=64 GATE_OK; live blocked until ChatGPT OAuth.
 
 | Field | Value |
 | --- | --- |
@@ -56,7 +58,7 @@ sekhmet run --direct --ro --timeout 90 --no-keep \
 | duration_ms | `3055` |
 | spark_id | `sp-e6354307-422f-4e97-8dc3-08aa138ce9f3` |
 | exit_code | `0` |
-| cmdline | `/home/vgpnk1337/.local/bin/codex-titanium exec -m gpt-5.6-luna -c model_reasoning_effort=low -c service_tier=fast --ephemeral --skip-git-repo-check --color never --sandbox read-only -c approval_policy=never Reply with exactly: SEKHMET_LUNA_FAST_OK` |
+| cmdline | `codex-titanium exec -m gpt-5.6-luna -c model_reasoning_effort=low -c service_tier=fast --ephemeral --skip-git-repo-check --color never --sandbox read-only -c approval_policy=never Reply with exactly: SEKHMET_LUNA_FAST_OK` |
 
 See [USAGE.md](USAGE.md), [EVIDENCE.md](EVIDENCE.md), [chatgpt-site-paste.md](chatgpt-site-paste.md).
 

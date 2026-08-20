@@ -4,11 +4,12 @@
 
 ```bash
 . ~/.xbgst/env.l3-sekhmet.sh
-command -v sekhmet xbgst-l3-orch tmux-orch codex-titanium
-sekhmet --version
-echo "$XBRD_SPARK_JOBS $XBRD_SPARK_SERVICE_TIER"   # expect: 64 fast
-tmux has-session -t sekhmet || tmux-orch ensure
-codex-titanium login status   # ChatGPT OAuth
+command -v sekhmet xask codex-titanium
+sekhmet --version   # expect 0.1.1+
+echo "$XBRD_SPARK_JOBS $XBRD_SPARK_SERVICE_TIER $XBRD_SPARK_MODEL"   # 64 fast gpt-5.6-luna
+# resolve: CODEX_BIN → codex-titanium → skip omarchy npx codex stub; never symlink titanium→codex
+# xask = thin sekhmet run --direct shim on PATH
+codex-titanium login status   # ChatGPT OAuth (live blocked if Not logged in)
 ```
 
 ## Dry swarm (offline gate)

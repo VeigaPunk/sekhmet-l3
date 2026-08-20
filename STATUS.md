@@ -1,6 +1,23 @@
 # STATUS — GATE_OK
 
-## Refresh 2026-08-06 (xbgst sekhmet priority)
+## Refresh 2026-08-20 (host vgpnk@plazir27)
+
+| Check | Result |
+| --- | --- |
+| host | **plazir27** · `vgpnk` · date 2026-08-20 |
+| PATH install | `~/.local/bin/sekhmet` **0.1.1** · `codex-titanium` · `xask` thin `sekhmet --direct` shim |
+| resolve | `CODEX_BIN` → `codex-titanium` → skip omarchy npx `codex` stub · **never** symlink titanium→`codex` |
+| crate pin | model **`gpt-5.6-luna`** · effort **low** · `service_tier=fast` · fallback **none** · swarm **-j 64** |
+| dry j=64 | **GATE_OK** (dry; no live claim on this host) |
+| live | **blocked** — ChatGPT OAuth **Not logged in** (do not claim live j=64 here) |
+
+Prior-host evidence below (vgpnk1337 / 2026-08-05–06) kept as historical; not re-run on plazir27.
+
+Stamp: 2026-08-20 · host: plazir27 · docs pin reconcile
+
+---
+
+## Prior host — Refresh 2026-08-06 (xbgst sekhmet priority)
 
 | Check | Result |
 | --- | --- |
