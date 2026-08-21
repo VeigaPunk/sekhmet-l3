@@ -1,5 +1,26 @@
 # STATUS — GATE_OK
 
+## L2 bounded-pulse refresh 2026-08-21 (host vgpnk@plazir27)
+
+| Check | Result |
+| --- | --- |
+| host L3 env | `XBRD_SPARK_JOBS=64` · model `gpt-5.6-luna` · tier `fast` · fallback `none` |
+| L2 pulse override | `l2-pulse.sh` pins `JOBS=1` per call only; does not rewrite the host env |
+| binaries | `sekhmet` / `xbrd-spark` **0.1.1** · `codex-titanium` **0.146.0-alpha.10.1+titanium.1** |
+| OAuth | **Logged in using ChatGPT** |
+| live pulse | **ok**, exit `0`, 6156ms, read-only, timeout `90s` |
+| route / spark | `L2-L3-20260821T170654Z` / `sp-pulse-20260821T170654Z` |
+| recurring lane | active 10-minute heartbeat · exactly one spark · no swarm |
+| handoff | four-field request: Route ID, goal, write-scope, stop |
+
+Current evidence: [`evidence/L3-PULSE.md`](evidence/L3-PULSE.md) and
+[`evidence/HANDOFF.md`](evidence/HANDOFF.md). Installed `sekhmet 0.1.1` uses
+direct Titanium by default and rejects an explicit `--direct`; the working L2
+command is `sekhmet run --ro --timeout 90` and records `direct=true`.
+
+The 2026-08-20 OAuth block below is retained as historical host state and is no
+longer current.
+
 ## Refresh 2026-08-20 (host vgpnk@plazir27)
 
 | Check | Result |

@@ -23,9 +23,37 @@ Install: `cargo install --git https://github.com/VeigaPunk/xbrd-spark --locked`
 . ~/.xbgst/env.l3-sekhmet.sh
 # XBRD_SPARK_JOBS=64
 # XBRD_SPARK_SERVICE_TIER=fast
+# XBRD_SPARK_MODEL=gpt-5.6-luna
 ```
 
-## Canonical live pin (xbgst / sol-ultra)
+This file is the **substrate default**: 64 concurrent L3 sparks. Do not drop it
+to 1. An L2 *pulse* may pin `XBRD_SPARK_JOBS=1` **inside the pulse wrapper only**.
+
+## Repeating bounded L2 pulse
+
+Run one pulse on each 10-minute lane heartbeat:
+
+```bash
+# from an xbrd-spark checkout
+scripts/l2-pulse.sh
+```
+
+The wrapper sources `~/.xbgst/env.l3-sekhmet.sh`, forces
+`XBRD_SPARK_JOBS=1`, and invokes `sekhmet run --ro --timeout 90`. It keeps the
+namespace under `~/.xbgst/evidence/sekhmet-l3-pulses` for inspection. If OAuth
+preflight is blocked, it emits one clearly labeled `--dry-run` pulse instead.
+Pass `--dry-run` to request the offline path directly.
+
+Each heartbeat stops after that one terminal result. Copy its Route ID, spark
+ID, status, exit code, and artifact path into
+[`evidence/L3-PULSE.md`](evidence/L3-PULSE.md). Use the request and receipt
+shape in [`evidence/HANDOFF.md`](evidence/HANDOFF.md).
+
+## Coordinator-only wide campaign
+
+Host env stays `XBRD_SPARK_JOBS=64`. An L2 pulse must **never** rewrite that
+file or start `sekhmet swarm -j 64` on its own. A coordinator must explicitly
+own any wide campaign:
 
 ```bash
 . ~/.xbgst/env.l3-sekhmet.sh
@@ -37,15 +65,14 @@ sekhmet swarm --direct -j 64 --ro --timeout 180 --no-keep \
   --tasks-file tasks.txt --root "$ROOT"
 ```
 
-One-shot probe:
+Manual one-spark pulse (does not change the host env file):
 
 ```bash
-ROOT=$(mktemp -d)
-XBRD_SPARK_MODEL=gpt-5.6-luna \
-XBRD_SPARK_FALLBACK_MODEL=none \
-XBRD_SPARK_SERVICE_TIER=fast \
-sekhmet run --direct --ro --timeout 90 --no-keep \
-  --task 'Reply with exactly: SEKHMET_LUNA_FAST_OK' --root "$ROOT"
+. ~/.xbgst/env.l3-sekhmet.sh
+export XBRD_SPARK_JOBS=1
+ROOT="$HOME/.xbgst/evidence/sekhmet-l3-pulses"
+sekhmet run --ro --timeout 90 \
+  --task 'Reply with exactly: SEKHMET_L3_PULSE_OK | godspeed' --root "$ROOT"
 ```
 
 ## Proven live oneshot (prior host, 2026-08-05)

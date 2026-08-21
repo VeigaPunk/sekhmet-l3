@@ -1,6 +1,11 @@
 # EVIDENCE — sekhmet-l3 ship 2026-08-05T21:06Z
 
-Host evidence dir: `/home/vgpnk1337/.xbgst/evidence/sekhmet-l3-sol-ultra-20260805T210312Z`
+Current L2 bounded-pulse evidence:
+
+- [`evidence/L3-PULSE.md`](evidence/L3-PULSE.md) — live and dry spark IDs, provenance, and 10-minute one-spark contract
+- [`evidence/HANDOFF.md`](evidence/HANDOFF.md) — tiny Route ID / goal / write-scope / stop envelope
+
+Historical host evidence dir: `/home/vgpnk1337/.xbgst/evidence/sekhmet-l3-sol-ultra-20260805T210312Z`
 
 ## Live oneshot (luna + fast)
 
