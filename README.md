@@ -10,7 +10,8 @@ Durable usage + evidence pack for operators and for paste into
 | Layer | Role |
 | --- | --- |
 | L1 | xbgst / xbrd-sol-ultra judge (Pareto, ship) |
-| L2 | xbrd-selector (optional model/agent selection) |
+| L2-select | xbrd-selector (optional model/agent catalog; ds4cc; may be absent) |
+| L2-loop | prime-agent (optional; persistent REPL + /refine; user-level binary; xbgst-stack adapter) |
 | **L3 / Sekhmet** | **namespaced sparks, no worktrees, up to 64 concurrent** |
 
 Binaries (Rust only): `sekhmet`, `xbrd-spark`, `xbgst-l3-orch`  
