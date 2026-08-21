@@ -1,14 +1,16 @@
 # USAGE — sekhmet L3 under xbgst / sol-ultra
 
+PATH `xask` is protocol xbreed (`xbreed ask`); the thin sekhmet shim is installed as `xask-l3`. Preflight with `command -v sekhmet xask-l3 codex-titanium` — do not treat PATH `xask` as the L3 shim.
+
 ## Preflight
 
 ```bash
 . ~/.xbgst/env.l3-sekhmet.sh
-command -v sekhmet xask codex-titanium
+command -v sekhmet xask-l3 codex-titanium
 sekhmet --version   # expect 0.1.1+
 echo "$XBRD_SPARK_JOBS $XBRD_SPARK_SERVICE_TIER $XBRD_SPARK_MODEL"   # 64 fast gpt-5.6-luna (host L3 fanout)
 # resolve: CODEX_BIN → codex-titanium → skip omarchy npx codex stub; never symlink titanium→codex
-# xask = thin sekhmet run --direct shim on PATH
+# xask-l3 = thin sekhmet run shim (Titanium default; clap has --no-direct only); PATH xask is protocol xbreed ask
 codex-titanium login status   # ChatGPT OAuth (live blocked if Not logged in)
 ```
 

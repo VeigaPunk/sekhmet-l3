@@ -1,5 +1,7 @@
 # STATUS — GATE_OK
 
+PATH overlay 2026-08-21: `xask-l3` is the thin sekhmet shim; PATH `xask` is protocol xbreed 8.16.137 (`xbreed ask` + stock `codex` 0.149.x). Preflight: `command -v sekhmet xask-l3 codex-titanium`.
+
 ## L2 bounded-pulse refresh 2026-08-21 (host vgpnk@plazir27)
 
 | Check | Result |
@@ -26,7 +28,7 @@ longer current.
 | Check | Result |
 | --- | --- |
 | host | **plazir27** · `vgpnk` · date 2026-08-20 |
-| PATH install | `~/.local/bin/sekhmet` **0.1.1** · `codex-titanium` · `xask` thin `sekhmet --direct` shim |
+| PATH install | `~/.local/bin/sekhmet` **0.1.1** · `codex-titanium` · `xask-l3` thin sekhmet shim · PATH `xask` = protocol xbreed |
 | resolve | `CODEX_BIN` → `codex-titanium` → skip omarchy npx `codex` stub · **never** symlink titanium→`codex` |
 | crate pin | model **`gpt-5.6-luna`** · effort **low** · `service_tier=fast` · fallback **none** · swarm **-j 64** |
 | dry j=64 | **GATE_OK** (dry; no live claim on this host) |
