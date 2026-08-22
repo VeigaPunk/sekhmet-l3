@@ -14,7 +14,7 @@ Durable usage + evidence pack for operators and for paste into
 | L2-loop | prime-agent (optional; persistent REPL + /refine; user-level binary; xbgst-stack adapter) |
 | **L3 / Sekhmet** | **namespaced sparks, no worktrees, up to 64 concurrent** |
 
-Binaries (Rust only): `sekhmet`, `xbrd-spark`, `xbgst-l3-orch`  
+Binaries on PATH (Rust only): `sekhmet`, `xbrd-spark`  
 Install: `cargo install --git https://github.com/VeigaPunk/xbrd-spark --locked`
 
 ## Host always-on
