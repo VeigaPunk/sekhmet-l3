@@ -8,7 +8,7 @@ PATH `xask` is protocol xbreed (`xbreed ask`); the thin sekhmet shim is installe
 . ~/.xbgst/env.l3-sekhmet.sh
 command -v sekhmet xask-l3 codex-titanium
 sekhmet --version   # expect 0.1.1+
-echo "$XBRD_SPARK_JOBS $XBRD_SPARK_SERVICE_TIER $XBRD_SPARK_MODEL"   # 64 fast gpt-5.6-luna (host L3 fanout)
+echo "$XBRD_SPARK_JOBS $XBRD_SPARK_SERVICE_TIER $XBRD_SPARK_MODEL"   # 64 fast gpt-5.3-codex-spark (host L3 fanout)
 # resolve: CODEX_BIN → codex-titanium → skip omarchy npx codex stub; never symlink titanium→codex
 # xask-l3 = thin sekhmet run shim (Titanium default; clap has --no-direct only); PATH xask is protocol xbreed ask
 codex-titanium login status   # ChatGPT OAuth (live blocked if Not logged in)
@@ -34,21 +34,21 @@ sekhmet swarm --dry-run -j 64 -f /tmp/tasks64.txt --root "$ROOT" --no-keep
 
 A 64-wide dry or live campaign is coordinator-owned and is not an L2 pulse.
 
-## Live luna + fast (required pin)
+## Live codex-spark + fast (required pin)
 
 Do **not** use a `-fast` model id. OAuth wants:
 
-- model: `gpt-5.6-luna`
+- model: `gpt-5.3-codex-spark` (fallback `gpt-5.6-luna`)
 - `service_tier=fast` via env `XBRD_SPARK_SERVICE_TIER=fast`
 - reasoning low (sekhmet default for titanium exec)
 
 ```bash
-export XBRD_SPARK_MODEL=gpt-5.6-luna
-export XBRD_SPARK_FALLBACK_MODEL=none
+export XBRD_SPARK_MODEL=gpt-5.3-codex-spark
+export XBRD_SPARK_FALLBACK_MODEL=gpt-5.6-luna
 export XBRD_SPARK_SERVICE_TIER=fast
 ROOT=$(mktemp -d)
 sekhmet run --ro --timeout 90 --no-keep \
-  --task 'Reply with exactly: SEKHMET_LUNA_FAST_OK' --root "$ROOT"
+  --task 'Reply with exactly: SEKHMET_SPARK_FAST_OK' --root "$ROOT"
 ```
 
 Coordinator-owned sol-ultra / xbgst campaigns may specify a wider wave.

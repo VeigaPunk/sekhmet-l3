@@ -23,7 +23,8 @@ Install: `cargo install --git https://github.com/VeigaPunk/xbrd-spark --locked`
 . ~/.xbgst/env.l3-sekhmet.sh
 # XBRD_SPARK_JOBS=64
 # XBRD_SPARK_SERVICE_TIER=fast
-# XBRD_SPARK_MODEL=gpt-5.6-luna
+# XBRD_SPARK_MODEL=gpt-5.3-codex-spark
+# XBRD_SPARK_FALLBACK_MODEL=gpt-5.6-luna
 ```
 
 This file is the **substrate default**: 64 concurrent L3 sparks. Do not drop it
@@ -58,8 +59,8 @@ own any wide campaign:
 ```bash
 . ~/.xbgst/env.l3-sekhmet.sh
 ROOT=$(mktemp -d)
-XBRD_SPARK_MODEL=gpt-5.6-luna \
-XBRD_SPARK_FALLBACK_MODEL=none \
+XBRD_SPARK_MODEL=gpt-5.3-codex-spark \
+XBRD_SPARK_FALLBACK_MODEL=gpt-5.6-luna \
 XBRD_SPARK_SERVICE_TIER=fast \
 sekhmet swarm --direct -j 64 --ro --timeout 180 --no-keep \
   --tasks-file tasks.txt --root "$ROOT"
